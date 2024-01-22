@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="link.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">Ad Trackly</div>
+        <nav class="menu">
+          <a href="home.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/25/25694.png"
+              alt="Home"
+            />
+            Home
+          </a>
+          <a href="link.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/455/455691.png"
+              alt="Create New Link"
+            />
+            Create New Link
+          </a>
+          <a href="dashboard.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/2329/2329087.png"
+              alt="Link Dashboard"
+            />
+            Link Dashboard
+          </a>
+          <a href="index.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png"
+              alt="Link Dashboard"
+            />
+            Log out
+          </a>
+        </nav>
+      </aside>
+      <main class="main-section">
+        <h1>URL Shortener</h1>
+        <form id="urlForm">
+          <label for="originalUrl">Enter URL:</label>
+          <input type="url" id="originalUrl" name="originalUrl" required />
+          <button type="button" onclick="shortenUrl()">Shorten URL</button>
+        </form>
+        <div id="shortenedUrlContainer">
+          <p>Shortened URL:</p>
+          <span id="shortenedUrl"></span>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function shortenUrl() {
+        const originalUrlInput = document.getElementById("originalUrl");
+        const shortenedUrlContainer = document.getElementById(
+          "shortenedUrlContainer"
+        );
+        const shortenedUrlSpan = document.getElementById("shortenedUrl");
+
+        // Check if the input is not empty
+        if (originalUrlInput.value.trim() !== "") {
+          // Generate a random 5-character string
+          const randomString = generateRandomString(5);
+
+          // Build the shortened URL using the random string
+          const shortenedUrl = `linker.com/${randomString}`;
+
+          // Display the shortened URL
+          shortenedUrlSpan.innerText = shortenedUrl;
+          shortenedUrlContainer.style.display = "block";
+
+          // Optionally, you can perform additional actions such as saving the mapping of original and shortened URLs.
+        } else {
+          // Display an error message or take appropriate action if the input is empty.
+          alert("Please enter a valid URL.");
+        }
+      }
+
+      // Function to generate a random string of a specified length
+      function generateRandomString(length) {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let randomString = "";
+
+        for (let i = 0; i < length; i++) {
+          randomString += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+
+        return randomString;
+      }
+    </script>
+  </body>
+</html>

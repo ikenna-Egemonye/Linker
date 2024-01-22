@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linker Dashboard</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">Ad Trackly</div>
+        <nav class="menu">
+          <a href="home.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/25/25694.png"
+              alt="Home"
+            />
+            Home
+          </a>
+          <a href="link.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/455/455691.png"
+              alt="Create New Link"
+            />
+            Create New Link
+          </a>
+          <a href="dashboard.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/2329/2329087.png"
+              alt="Link Dashboard"
+            />
+            Link Dashboard
+          </a>
+          <a href="index.html" class="menu-item">
+            <img
+              width="30px"
+              src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png"
+              alt="Link Dashboard"
+            />
+            Log out
+          </a>
+        </nav>
+      </aside>
+      <main class="main-section">
+        <div class="hero-section">
+          <div class="hero-slider">
+            <div class="hero-slide">
+              <img
+                src="https://img.freepik.com/free-photo/photo-delighted-cheerful-afro-american-woman-with-crisp-hair-points-away-shows-blank-space-happy-advertise-item-sale-wears-orange-jumper-demonstrates-where-clothes-shop-situated_273609-26392.jpg?size=626&ext=jpg"
+                alt="Slide 1"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="https://img.freepik.com/free-photo/happy-adult-pointing-cardboard-speech-bubble-studio-advertise-text-message-colorful-banner-young-man-showing-cartoon-outline-balloon-using-illustration-paper-remote-conversation_482257-41057.jpg?size=626&ext=jpg"
+                alt="Slide 2"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="https://img.freepik.com/free-photo/horizontal-shot-glad-caucasian-woman-points-aside-with-both-fore-fingers-advertises-something-aside_273609-27148.jpg?size=626&ext=jpg"
+                alt="Slide 3"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="https://img.freepik.com/free-photo/positive-afro-american-lady-shows-something-amazing-points-up-sideways-with-index-fingers-advertises-copy-space-has-toothy-smile-isolated-yellow-background_273609-34317.jpg?size=626&ext=jpg"
+                alt="Slide 4"
+              />
+            </div>
+          </div>
+        </div>
+        <h1>Link Summary</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Links</th>
+              <th>Clicks</th>
+              <th>Countries</th>
+              <th>Unique Users</th>
+              <th>Number of Sources</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linker.com/qwerty</td>
+              <td>217</td>
+              <td>20</td>
+              <td>156</td>
+              <td>3</td>
+              <td>
+                <button
+                  class="details-button"
+                  onclick="location.href='dashboard.html'"
+                >
+                  More Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <script>
+      const heroSlider = document.querySelector(".hero-slider");
+      const firstSlide = heroSlider.firstElementChild.cloneNode(true);
+      heroSlider.appendChild(firstSlide);
+    </script>
+  </body>
+</html>
